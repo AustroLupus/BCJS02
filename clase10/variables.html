@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="txt"></p>
+    <script type="text/javascript">
+        var texto="";//Inicializacion de la variable
+        var num="9";
+        if(num>10){
+            texto="El múmero es: "+num+" cumple el primer criterio";
+        }else if (num>5){
+            texto="El múmero es: "+num+" cumple el segundo criterio";
+        }else{
+            texto="El múmero es: "+num+" no cumple ninguno de los criterios";
+        }
+        document.getElementById('txt').innerHTML=texto;
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejemplo de objeto</h1><br>
+    <p id="auto"></p><br>
+    <p id="cil"></p><br>
+    <p id="otro"></p><br>
+
+    <script type="text/javascript">
+
+        const auto={
+            marca:"Volvo",
+            modelo:"sx30",
+            cilindrada:"2300",
+            marcaModelo:function(){
+                return this.marca+" - "+this.modelo;
+            }
+        };
+        document.getElementById('auto').innerHTML=auto.marcaModelo(); //Llamado como funcion
+        document.getElementById('cil').innerHTML=auto.cilindrada; //llamado como elemento
+        document.getElementById('otro').innerHTML="Marca :"+auto.marca+"<br>Modelo :"+auto.modelo+"<br>Cilindrada :"+auto.cilindrada; //ejercicio concatenado
+    </script>
+</body>
+</html>

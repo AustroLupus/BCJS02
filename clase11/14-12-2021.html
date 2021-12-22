@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de inserción HTML</title>
+</head>
+<body>
+    <h1>Ejemplo inserción HTML</h1>
+    <button onclick="agregar();">Agrergar otro elemento</button><br>
+    <form action="#" method="get">
+        <p id="cont">
+            Elemento 1: <input type="text" name="ele01" id="ele01"><br>
+        </p>
+        <input type="submit" name="enviar" value="enviar">
+    </form>
+    <script type="text/javascript">
+        var contenido="Elemento 1: <input type='text' name='ele01' id='ele01'><br>";
+        var contador=1
+        const max=10;
+        function agregar(){
+            if(contador<10){
+                contador=contador+1;
+                let extra="Elemento "+contador+": <input type='text' name='ele"+contador+"' id='ele"+contador+"'><br>";
+                contenido=contenido+extra;
+                document.getElementById('cont').innerHTML=contenido;
+            }else{
+                alert("Ingresó la cantidad máxima");
+            }
+        }
+    </script>
+</body>
+</html>

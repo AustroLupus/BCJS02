@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Evaluador</title>
+</head>
+<body>
+    <div class="text-center">
+        <h1>¿Mayor que 10 y menor que 20?</h1>
+    </div>
+    <div class="container mt-3">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Número 1</th>
+                    <th>Resultado</th>
+                    </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input placeholder="Número 1" autofocus type="number" required id="num1" name="num1" class="form-control"></td>
+                    <td><span id="resultado" name="resultado">Pesione Evaluar</span></td>
+                </tr>
+            </tbody>
+        </table>
+        <button onclick="evaluar();" class="btn btn-primary">Evaluar</button>
+    </div>
+    <script type="text/javascript">
+        function evaluar(){
+            var v1=document.getElementById('num1').value;
+            var i1=parseInt(v1,10);
+            if (i1>10 && i1<20) {
+                document.getElementById('resultado').innerHTML="El número "+i1+" es mayor que 10 y menor que 20";
+            } else {
+                document.getElementById('resultado').innerHTML="El número "+i1+" es menor o igual a 10, o mayor o igual a 20";
+            }
+        }
+
+    </script>
+</body>
+</html>

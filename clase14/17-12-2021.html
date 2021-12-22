@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Arreglos</title>
+</head>
+<body>
+    <div class="container form-control">
+        <h1>Arreglos</h1>
+        <br>
+        <p>
+            ingrese nombre: <input type="text" name="nom" id="nom"><br>
+            <button class="btn-primary" onclick="agregar();">ingresar</button><br>
+            <span id="modsect" hidden><br>
+                <button class="btn-primary" onclick="ordenar();" id="ordena" disabled>Ordenar el arreglo</button><br>
+                <button class="btn-danger" onclick="quitarprim();" id="quitp" disabled>quitar primer elemento</button><br>
+                <button class="btn-danger" onclick="quitarult();" id="quitult" disabled>quitar ultimo elemento</button><br>
+                ingrese posicion a modificar:<input type="text" name="po" id="po"><br>
+                ingrese nuevo valor:<input type="text" name="va" id="va"><br>
+                <button onclick="modificar();" id="btnmod" name="btnmod" class="btn-secondary">Modificar</button>
+                <br>
+                ingrese posición a eliminar: <input type="text" name="poselim" id="poselim"><br>
+		        <button onclick="matar();" class="btn-danger" >Eliminar</button><br>
+                <br>
+                <button onclick="reiniciar();" class="btn-danger">REINICAR</button>
+            </span>
+        </p>
+        <p id="ar" class="table table-striped">
+        </p>
+    
+    <script type="text/javascript">
+        var arreglo=[];
+        function matar(){
+			let pos=document.getElementById("poselim").value;
+			arreglo.splice(pos,1);
+			llenar();
+		}
+        function ordenar(){
+            if(arreglo.length==0){
+                alert("No hay elementos a eliminar");
+            }else{
+            arreglo.sort();
+            }
+            llenar();
+        }
+        function reiniciar(){
+            let conf=prompt("¿Desea reiniciar el arreglo? (S/N)",'');
+            if(conf=="S"|| conf=="s"){
+                arreglo.length=0;
+                llenar();
+                document.getElementById('modsect').hidden=true;
+            }else if(conf=="N"|| conf=="n"){
+                alert("Se ha cancelado la modificación");
+            }else{
+                alert("Respuesta no válida, ingrese S o N");
+            }
+        }
+
+		function modificar(){
+			let va=document.getElementById("va").value;
+			let po=document.getElementById("po").value;
+			arreglo[po]=va;
+			llenar();
+		}
+
+		function agregar(){
+			let v1=document.getElementById("nom").value;
+			arreglo.push(v1);
+			document.getElementById("nom").value="";
+			llenar();
+		}
+        function agregar(){
+            let v1=document.getElementById('nom').value;
+            arreglo.push(v1);
+            document.getElementById('nom').value="";
+            // alert("Largo del arreglo: "+arreglo.length);
+            llenar();
+        }
+        function quitarprim(){
+            if(arreglo.length==0){
+                alert("No hay elementos a eliminar");
+            }else{
+            arreglo.shift();
+            }
+            llenar();
+        }
+            function quitarult(){
+            if(arreglo.length==0){
+                alert("No hay elementos a eliminar");
+            }else{
+            arreglo.pop();
+            }
+            llenar();
+        }    
+        function llenar(){
+            let fragmento="";
+            fragmento="<table border=1>";
+                document.getElementById('quitp').disabled=false;
+                document.getElementById('quitult').disabled=false;
+                document.getElementById('ordena').disabled=false;
+                document.getElementById('modsect').hidden=false;
+            for (var i=0; i< arreglo.length; i++){
+                fragmento+="<tr><td>"+i+" - "+arreglo[i]+"</td></tr>";
+            }
+            fragmento+="</table>";
+            document.getElementById('ar').innerHTML=fragmento;
+        }
+    </script>
+    
+</body>
+</html>

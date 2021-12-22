@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El IVA</title>
+</head>
+<body>
+    <h1>IVA</h1><br>
+    Ingrese el valor Bruto:<input type="number" name="bruto" id="bruto"><br>
+    El IVA corresponde al <span id="iva" name="iva"></span><br>
+    El Neto a pagar asciende a :<strong><span id="neto" name="neto"></span></strong><br>
+    <button onclick="calcular();">Calcular</button>
+
+    <script type="text/javascript">
+        function calcular() {
+            let v1=parseInt(document.getElementById('bruto').value);
+            let totiva=funciva(v1);
+            document.getElementById('iva').innerHTML=totiva;
+            document.getElementById('neto').innerHTML=v1+totiva;
+        }
+        function funciva(t1) {
+            let res=0;
+            res =t1*0.19;
+            return res;
+        }
+    </script>
+
+</body>
+</html>

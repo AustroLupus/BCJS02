@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejemplo JS</h1><br>
+    <p id="saludo">java script puede cambiar el contenido de un html</p><br>
+    <p name="saludo">java script puede cambiar el contenido de un html</p><br>
+    <p class="mas">java script puede cambiar el contenido de un html</p><br>
+    <button onclick="document.getElementById('saludo').innerHTML='mas ejemplos';">presiona el boton</button><br>
+    <button onclick="document.getElementsByName('saludo')[0].innerHTML='ejemplos extra';">presiona el boton</button><br>
+    <button onclick="document.getElementsByClassName('mas')[0].innerHTML='por si acaso';">presiona el boton</button><br>
+    <button onclick="document.getElementsByTagName('P')[0].innerHTML='otros ejemplos';">presiona el boton</button>
+    
+    <h2>Division</h2>
+    <br>
+    
+    <p id="divi"></p>
+
+    <p id="di"></p>
+    <br>
+    <p>valor 1: <input type="number" name="n1" id="v1"></p>
+    <p>valor 2: <input type="number" name="n2" id="v2"></p>
+    <p>resultado: <input type="number" name="res" id="res"></p>
+    <button onclick="calcular();">Calcular</button>
+
+
+    <script type="text/javascript">
+        document.getElementById('divi').innerHTML=25/5;
+        document.write("<br>");
+        document.write(36/6);
+        let a, b, c;
+        a = 25;
+        b = 5;
+        c = a / b;
+        document.getElementById("di").innerHTML=c;
+        var xz="55";
+        function calcular(){
+            let v1=document.getElementById('v1').value;
+            let v2=document.getElementById('v2').value;
+            let vv1=parseInt(v1,10);
+            let vv2=parseInt(v2,10);
+            let res=vv1+vv2;
+            document.getElementById('res').value=res;
+        }
+        Math.Pi();
+
+
+    </script>
+</body>
+</html>

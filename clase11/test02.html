@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Datos de vehiculos</title>
+</head>
+<body>
+    <div class="text-center">
+        <h1>Datos de vehículos</h1>
+    </div>
+    <div class="container mt-3">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Cilindrada</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span id="marca" name="marca">Seleccione vehículo</span></td>
+                    <td><span id="modelo" name="modelo">Seleccione vehículo</span></td>
+                    <td><span id="cilindrada" name="cilindrada">Seleccione vehículo</span></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="row">
+            <div class="col">
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="vehiculo1" name="optvehiculo" value="vehiculo1" checked>Vehiculo 1
+                    <label class="form-check-label" for="vehiculo1"></label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="vehiculo2" name="optvehiculo" value="vehiculo2">Vehículo 2
+                    <label class="form-check-label" for="vehiculo2"></label>
+                </div>
+            </div>
+        </div>
+        <br>
+        <button onclick="mostrarDatos();" class="btn btn-primary">Datos</button>
+    </div>
+    <br>
+    <div class="container mt-3" style="background-color: black; color: chartreuse; font-family: 'Courier New', Courier, monospace;">
+        <h4>Consola de super jaquer 5000 marca AliExpress</h4>
+        Dato <em>marca</em> tipo <span id="tipo1"><strong>PRESIONE DATOS</strong></span> con valor = <span id="spanmarca"></span><br>
+        Dato <em>modelo</em> tipo <span id="tipo2"><strong>PRESIONE DATOS</strong></span> con valor = <span id="spanmodelo"></span><br>
+        Dato <em>cilindrada</em> tipo <span id="tipo3"><strong>PRESIONE DATOS</strong></span> con valor = <span id="spancilindrada"></span><br>
+    </div>
+    <script type="text/javascript">
+        var marca=null;
+        var modelo=null;
+        var cilindrada=null;
+        function mostrarDatos(){
+            if (document.getElementById('vehiculo1').checked) {
+                marca="Mercedes";
+                modelo="Sprinter 413";
+                cilindrada=2148;
+            } else {
+                marca="Ford";
+                modelo="Econoline e-350";
+                cilindrada=2700;
+            }
+            document.getElementById('marca').innerHTML=marca;
+            document.getElementById('modelo').innerHTML=modelo;
+            document.getElementById('cilindrada').innerHTML=cilindrada+" cc";
+            document.getElementById('spanmarca').innerHTML=marca;
+            document.getElementById('spanmodelo').innerHTML=modelo;
+            document.getElementById('spancilindrada').innerHTML=cilindrada;
+            document.getElementById('tipo1').innerHTML=typeof(marca);
+            document.getElementById('tipo2').innerHTML=typeof(modelo);
+            document.getElementById('tipo3').innerHTML=typeof(cilindrada);
+        }
+    </script>
+</body>
+</html>

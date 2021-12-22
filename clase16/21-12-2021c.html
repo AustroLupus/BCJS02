@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circunferencia</title>
+</head>
+<body>
+    <h1>Circunferencia</h1>
+    Radio: <input type="number" name="v1" id="v1"><br>
+    <button onclick="llamar();">Activar</button>
+    <p id="resuld"></p>
+    <p id="resulp"></p>
+    <p id="resulc"></p>
+
+    <script type="text/javascript">
+        function llamar() {
+            let vv1=document.getElementById('v1').value;
+            document.getElementById('resuld').innerHTML="El diametro es :"+diametro(vv1)+"<br>";
+            document.getElementById('resulp').innerHTML="El perimetro es :"+perimetro(vv1)+"<br>";
+            document.getElementById('resulc').innerHTML="El área es :"+area(vv1)+"<br>";
+        }
+        function diametro(v1) {
+            let diam=parseInt(v1)*2;
+            return diam;
+        }
+        function perimetro(v1) {
+            let perim=2*Math.PI*parseInt(v1);
+            return perim;
+        }
+        function area(v1) {
+            let areacirc=Math.PI*(parseInt(v1)**2);
+            return areacirc;
+        }
+
+    </script>
+</body>
+</html>

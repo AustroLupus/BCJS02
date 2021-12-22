@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Trabajo con archivos</h1>
+    <p>
+        <input type="file" id="foto" name="foto"><br>
+        <button onclick="cargar();">Cargar</button>
+        <img src="" id="ft">
+    </p>
+    <script type="text/javascript">
+        function cargar(){
+            let root=document.getElementById('foto').value;
+            root=root.replace(/C:\\fakepath\\/,'');
+            alert("Foto: "+root);
+            document.getElementById('ft').src=root;
+        }
+    </script>
+</body>
+</html>

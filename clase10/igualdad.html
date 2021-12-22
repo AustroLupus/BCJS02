@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="txt"></p>
+    <script type="text/javascript">
+        var text1="9";//Inicializacion de la variable
+        if(text1==9){
+            texto="si valor";
+        }else{
+            texto="no";
+        }
+        document.getElementById('txt').innerHTML=texto;
+        var text1="9";//Inicializacion de la variable
+        if(text1===9){ //igualdad estricta mismo valor mismo formato
+            texto="si";
+        }else{
+            texto="no estricto";
+        }
+        document.getElementById('txt').innerHTML=texto;
+    </script>
+</body>
+</html>

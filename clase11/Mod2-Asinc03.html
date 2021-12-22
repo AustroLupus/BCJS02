@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Determinar el porcentaje</title>
+</head>
+<body>
+    <div class="text-center">
+        <h1>Calcular porcentajes</h1>
+    </div>
+    <div class="container mt-3">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Número</th>
+                    <th>Porcentaje</th>
+                    <th>Porcentual</th>
+                    </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input placeholder="Número" autofocus type="number" required id="numero" name="numero" class="form-control"></td>
+                    <td><input placeholder="Porcentaje" min="0" type="number" id="porcentaje" name="porcentaje" class="form-control"></td>
+                    <td><span id="porcentual" name="porcentual">Pesione Calcular</span></td>
+                </tr>
+            </tbody>
+        </table>
+        <button onclick="calcular();" class="btn btn-primary">Calcular</button>
+    </div>
+    <script type="text/javascript">
+        function calcular(){
+            let v1=document.getElementById('numero').value;
+            let v2=document.getElementById('porcentaje').value;
+            let i1=parseInt(v1,10);
+            let i2=parseInt(v2,10);
+            let porcentual=i1*(i2/100);
+            alert("El "+i2+"% de "+i1+" es "+porcentual);
+            document.getElementById('porcentual').innerHTML=porcentual;
+        }
+    </script>
+</body>
+</html>

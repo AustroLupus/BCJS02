@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC</title>
+</head>
+<body>
+    <div style="text-align: center;">
+        <h1>Calculador de IMC</h1>
+    </div>
+    <p>Ingrese el peso: <input type="number" min="1" placeholder="Peso en kilogramos" id="peso" step="1" required>kgs.</p>
+    <p>Ingrese la estatura: <input type="number" min="0.1" placeholder="Estatura en metros" step="0.1" id="estat" required>mts.</p>
+    <button onclick="calcular()">Calcular IMC</button>
+    <p>IMC = <input type="number" readonly placeholder="IMC" id="resimc"></p>
+    <p>De acuerdo al valor del IMC el estado es <strong><span id="imctxt">presione Calcular IMC</span></strong></p>
+    <script type="text/javascript">
+        function calcular(){
+            let v1=document.getElementById('peso').value; //Recuperar valores del formulario
+            let v2=document.getElementById('estat').value;
+            let peso=parseFloat(v1,10); //convertir a decimal punto flotante
+            let estat=parseFloat(v2,10);
+            let imc=peso/(estat**2); //calculo del IMC
+            document.getElementById('resimc').value=imc.toFixed(1); //Coloco el valor del IMC aca porque debe figurar en las 4 condiciones
+            if (imc<18.5) { //primera comprobacion
+                document.getElementById('imctxt').innerHTML="Peso inferior al normal";                
+            }else if (imc<=24.9) { //segunda comprobacion
+                document.getElementById('imctxt').innerHTML="Normal";
+            }else if (imc<=29.9) {
+                alert("Diga que es culpa de la pandemia");
+                document.getElementById('imctxt').innerHTML="Peso superior al normal";
+            }else{
+                alert("Diga que es culpa de la pandemia");
+                document.getElementById('imctxt').innerHTML="Sobrepeso";
+            }
+        }
+    </script>
+</body>
+</html> 
